@@ -1,0 +1,71 @@
+@use 'base/variables' as v;
+
+.citas {
+    list-style: none;
+    padding: 0;
+    li {
+        padding: 1rem;
+        border-top: 1px solid v.$blanco;
+        transition: .2s ease;
+
+        h3 {
+            text-align: left;
+            margin-top: 4rem;
+        }
+        p{
+            color: v.$azul;
+            font-weight: 700;
+            span, .servicio {
+                font-weight: 400;
+                color: v.$blanco;
+            }
+        }
+        .total {
+            color: v.$blanco;
+            font-size: 4rem;
+            margin: 0;
+        }
+        &:hover {
+            transform: scale(1.03);
+            .total {
+                color: v.$azul;
+            }
+        }
+    }
+}
+.contenedor-final-servicios{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 3rem;
+    margin: 4rem 0 3rem 0;
+    .eliminar-servicios{
+        transition: scale .2s ease;
+        .imagen-eliminar-servicios {
+            height: 5.2rem;
+        }
+        &:hover {
+            filter: invert(67%) sepia(89%) saturate(7492%) hue-rotate(346deg) brightness(84%) contrast(146%);
+            scale: 1.2;
+        }
+    }
+}
+
+//Utilizamos @extend para importar todos los estilos que previamente hayamos defininidos
+.servicios{
+    .boton {
+        margin: 2rem 0 2rem 0;
+        font-size: 1.8rem;
+        padding: 1.5rem 3.5rem;
+    }
+    @extend .citas;
+    li{
+        padding-bottom: 0;
+    }
+    .acciones {
+        display: flex;
+        margin-top: 0;
+        
+    }
+
+}

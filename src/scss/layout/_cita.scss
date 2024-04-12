@@ -1,0 +1,57 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as mix;
+
+.seccion {
+    padding: 5rem 0;
+    display: none;
+    .text-center {
+        text-align: center;
+    }
+}
+
+.mostrar {
+    display: block;
+}
+
+.ocultar {
+    display: none;
+}
+
+.barra-usuario {
+    display: block;
+    text-align: center;
+    @include mix.tablet {
+        display: flex;
+        justify-content: space-between;
+    };
+    margin: 2rem 0 6rem 0;
+    p {
+        padding: 0;
+        margin: 0 0 3rem 0;
+        font-size: 2rem;
+        @include mix.tablet {
+            margin: 0;
+        };
+        span {
+            color: v.$azul;
+        }
+    }
+    a {
+        padding: 0;
+        margin: 0;
+        color: v.$blanco;
+        font-size: 2rem;
+        transition: .3s ease;
+        &:hover {
+            color: v.$rojo;
+            cursor: pointer;
+        }
+    }
+}
+
+.nombre-cliente.admin {
+    span {
+        color: v.$rojo;
+        user-select: none;
+    }   
+}

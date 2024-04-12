@@ -1,0 +1,12 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as mix;
+
+.boton {
+    @include mix.boton(v.$azul, v.$blanco);
+    &.rojo {
+        background-color: v.$rojo;
+        &:hover {
+            background-color: darken($color: v.$rojo, $amount: 8);
+        }
+    }
+}
