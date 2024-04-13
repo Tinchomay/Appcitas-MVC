@@ -9,11 +9,18 @@
 .campo {
     margin-top: 5rem;
     display: flex;
+    flex-direction: column;
+    @include mix.telefono {
+        flex-direction: row
+    };
     margin-bottom: 2rem;
     align-items: center;
     label {
+        flex: 0 0 4rem;
         //Indica el tamaño que tendra la etiqueta y que no crecera ni se hara chico
-        flex: 0 0 12rem;
+        @include mix.telefono {
+            flex: 0 0 12rem;
+        };
         font-size: 2.2rem;
     }
 
@@ -23,6 +30,7 @@
         border: none;
         padding: 1.25rem;
         border-radius: 1rem;
+        width: 100%;
         &:disabled {
             background-color: lighten($color: v.$negro, $amount: 30%);
             color: v.$blanco;
