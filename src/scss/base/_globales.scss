@@ -44,7 +44,10 @@ img {
     text-transform: uppercase;
     margin: 1rem auto;
     background-color: v.$verde;
-    width: 50%;
+    @include mix.telefono {
+        width: 50%;
+    };
+    width: 100%;
     border-radius: 1rem;
     &.error {
         background-color: v.$rojo;
